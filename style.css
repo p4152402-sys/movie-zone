@@ -1,0 +1,464 @@
+body{
+    margin:0;
+    font-family:Arial;
+    color:white;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.7),
+    rgba(0,0,0,0.7)),
+
+    url("https://wallpaperaccess.com/full/2703652.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background-color:#111;
+}
+
+ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+li{
+    cursor:pointer;
+}
+
+li:hover{
+    color:red;
+}
+
+.hero{
+    text-align:center;
+    margin-top:150px;
+
+    animation:fadeln 2s;
+}
+
+h1{
+    font-size:50px;
+}
+
+p{
+    font-size:20px;
+}
+
+button{
+    background-color:red;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    font-size:18px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:darkred;
+}
+
+.movies{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:100px;
+    flex-wrap:wrap;
+}
+
+.card{
+    background-color:#111;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    width:220px;
+    transition:0.3s;
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.card:hover{
+    transform:scale(1.05);
+    box-shadow: 0px 0px 20px red;
+
+}
+
+.card h3{
+    margin-top:10px;
+}
+
+.search-box{
+    text-align:center;
+    margin-top:30px;
+}
+
+.search-box input{
+    padding:12px;
+    width:250px;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.search-box button{
+    padding:12px 20px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    margin-top:80px;
+    background-color:#111;
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(50px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+    }
+
+    ul{
+        flex-direction:column;
+        text-align:center;
+        padding:0;
+    }
+
+    h1{
+        font-size:35px;
+    }
+
+    .movies{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .search-box input{
+        width:80%;
+    }
+}
+
+.light-mode{
+
+    background:white;
+    color:black;
+
+}
+
+.light-mode nav{
+
+    background:#ddd;
+
+}
+
+.light-mode .card{
+
+    background:#f0f0f0;
+    color:black;
+
+}
+
+.light-mode footer{
+
+    background:#ddd;
+    color:black;
+
+}
+
+.login-box{
+
+    width:300px;
+
+    margin:100px auto;
+
+    background:#111;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+.login-box input{
+
+    width:90%;
+
+    padding:12px;
+
+    margin:10px 0;
+
+    border:none;
+
+    border-radius:5px;
+
+}
+
+.login-box button{
+
+    width:100%;
+
+}
+
+nav ul li a:hover{
+
+    color: orange;
+
+    transition: 0.3s;
+
+}
+
+.active{
+
+    color: orange;
+
+    font-weight: bold;
+
+}
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    z-index:1000;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,0.8);
+
+}
+
+.modal-content{
+
+    position:relative;
+
+    width:70%;
+
+    margin:5% auto;
+
+    text-align:center;
+
+}
+
+.close{
+
+    position:absolute;
+
+    right:-20px;
+
+    top:-20px;
+
+    color:white;
+
+    font-size:35px;
+
+    cursor:pointer;
+
+}
+
+.rating{
+
+    margin-top: 10px;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+}
+
+.favorite-item{
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 15px;
+
+}
+
+.filters{
+
+    text-align: center;
+
+    margin: 20px;
+
+}
+
+.filters button{
+
+    margin: 5px;
+
+}
+
+/* ==========================================
+   MOVIE DETAILS MODAL
+   ========================================== */
+
+.movie-details-modal {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.85);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2000;
+
+    overflow-y: auto;
+}
+
+
+.movie-details-content {
+
+    position: relative;
+
+    width: 80%;
+    max-width: 900px;
+
+    background: #111;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+
+}
+
+
+.movie-details-content img {
+
+    width: 280px;
+
+    max-height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+}
+
+
+.movie-details-info {
+
+    flex: 1;
+
+}
+
+
+.movie-details-info h1 {
+
+    font-size: 40px;
+
+    margin-top: 0;
+
+}
+
+
+.movie-details-info p {
+
+    line-height: 1.6;
+
+}
+
+
+.details-close {
+
+    position: absolute;
+
+    right: 20px;
+    top: 10px;
+
+    font-size: 35px;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+.details-close:hover {
+
+    color: red;
+
+}
+
+
+/* Mobile */
+
+@media(max-width: 768px) {
+
+    .movie-details-content {
+
+        flex-direction: column;
+
+        width: 80%;
+
+        margin: 20px;
+
+    }
+
+    .movie-details-content img {
+
+        width: 200px;
+
+    }
+
+    .movie-details-info h1 {
+
+        font-size: 28px;
+
+    }
+
+}

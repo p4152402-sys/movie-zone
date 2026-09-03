@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Movie Website</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <h2>🎬 Movie Zone</h2>
+
+        <ul>
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Signup</a></li>
+            <li><a href="favorites.html">Favorites</a></li>
+            <li><a href="profile.html">Profile</a></li>
+
+        </ul>
+
+        <button id="modeBtn">
+            🌙 Dark Mode
+        </button>
+
+        <button onclick="logout()">
+            Logout
+        </button>
+
+    </nav>
+
+
+    <!-- WELCOME -->
+
+    <h3 id="welcomeUser"></h3>
+
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+        <h1>
+            Unlimited Movies, TV Shows & More
+        </h1>
+
+        <p>
+            Watch anywhere. Discover your next favorite movie.
+        </p>
+
+        <button onclick="document.getElementById('movieContainer').scrollIntoView({behavior:'smooth'})">
+            🎬 Explore Movies
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search Movies"
+        >
+
+        <button id="searchBtn">
+            🔎 Search
+        </button>
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <button onclick="filterMovies('all')">
+            All
+        </button>
+
+        <button onclick="filterMovies('Bollywood')">
+            🇮🇳 Bollywood
+        </button>
+
+        <button onclick="filterMovies('Hollywood')">
+            🇺🇸 Hollywood
+        </button>
+
+        <button onclick="filterMovies('superhero')">
+            🦸 Superhero
+        </button>
+
+        <button onclick="filterMovies('action')">
+            💥 Action
+        </button>
+
+        <button onclick="filterMovies('romance')">
+            ❤️ Romance
+        </button>
+
+        <button onclick="filterMovies('drama')">
+            🎭 Drama
+        </button>
+
+        <button onclick="filterMovies('classic')">
+            🎞️ Classic
+        </button>
+
+        <button onclick="filterMovies('sports')">
+            🏆 Sports
+        </button>
+
+        <button onclick="filterMovies('sci-fi')">
+            🚀 Sci-Fi
+        </button>
+
+        <button onclick="filterMovies('fantasy')">
+            ✨ Fantasy
+        </button>
+
+    </div>
+
+
+    <!-- MOVIE CONTAINER -->
+
+    <!--
+        Movie cards are created automatically
+        from movies-data.js using JavaScript.
+    -->
+
+    <div
+        class="movies"
+        id="movieContainer">
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Movie Zone | All Rights Reserved
+        </p>
+
+    </footer>
+
+
+    <!-- TRAILER MODAL -->
+
+    <div
+        class="modal"
+        id="trailerModal">
+
+        <div class="modal-content">
+
+            <span class="close">
+                &times;
+            </span>
+
+            <iframe
+                id="trailerFrame"
+                width="700"
+                height="400"
+                src=""
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <!-- movies-data.js MUST COME FIRST -->
+
+    <script src="movies-data.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

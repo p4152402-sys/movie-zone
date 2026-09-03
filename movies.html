@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Movies</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<nav>
+
+    <h2>🎬 Movie Zone</h2>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="movies.html">Movies</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="signup.html">Signup</a></li>
+        <li><a href="favorites.html">Favorites</a></li>
+        <li><a href="profile.html">Profile</a></li>
+    </ul>
+
+    <button id="modeBtn">🌙 Dark Mode</button>
+    <button onclick="logout()">Logout</button>
+
+</nav>
+
+<div class="movies">
+
+    <div class="card" data-name="avengers">
+
+        <img src="images/Avengers.jpeg">
+
+        <h3>Avengers</h3>
+
+        <button onclick="openTrailer('https://www.youtube.com/embed/eOrNdBpGMv8')">
+            Watch Trailer
+        </button>
+
+        <button class="fav-btn" data-movie="Avengers">
+            ❤️ Favorite
+        </button>
+
+    </div>
+
+    <div class="card" data-name="batman">
+
+        <img src="images/Batman.jpeg">
+
+        <h3>Batman</h3>
+
+        <button onclick="openTrailer('https://www.youtube.com/embed/mqqft2x_Aa4')">
+            Watch Trailer
+        </button>
+
+        <button class="fav-btn" data-movie="Batman">
+            ❤️ Favorite
+        </button>
+
+    </div>
+
+    <div class="card" data-name="spiderman">
+
+        <img src="images/spiderman.jpeg">
+
+        <h3>Spider Man</h3>
+
+        <button onclick="openTrailer('https://www.youtube.com/embed/JfVOs4VSpmA')">
+            Watch Trailer
+        </button>
+
+        <button class="fav-btn" data-movie="Spider Man">
+            ❤️ Favorite
+        </button>
+
+    </div>
+
+</div>
+
+<div class="modal" id="trailerModal">
+
+    <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <iframe
+            id="trailerFrame"
+            width="700"
+            height="400"
+            src=""
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+
+<script src="movies-data.js"></script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
